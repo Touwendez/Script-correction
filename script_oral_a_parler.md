@@ -38,19 +38,19 @@ Mais quand une voiture autonome a un accident, c'est très souvent parce qu'elle
 
 ## [5 — Le projet DriveSense]
 
-Notre travail s'inscrit dans un projet plus large mené ici, chez Audensiel : le projet DriveSense.
 
 Comme le montre ce schéma, la perception est le maillon central de la chaîne : elle vient après les capteurs, et tout le reste — la planification de la trajectoire, le contrôle du véhicule — dépend d'elle. Autrement dit, si la perception se trompe, l'erreur se propage jusqu'au volant.
 
-Le projet a trois axes. Nous, nous travaillons sur le premier : la perception.
 
 ## [6 — Problématique]
 
-On pourrait croire qu'il suffit de brancher tous les capteurs ensemble, en permanence, pour bien voir. Eh bien c'est faux, et c'est tout le cœur de notre sujet.
-
 Chaque capteur a ses forces et ses faiblesses selon la situation. La caméra voit mal la nuit et sous la neige. Le radar, lui, reste fiable. Le LiDAR est gêné par le brouillard.
 
+On pourrait croire qu'il suffit de brancher tous les capteurs ensemble, en permanence, pour bien voir. Eh bien c'est faux, et c'est tout le cœur de notre sujet.
+
 Le problème, c'est qu'ajouter un capteur qui voit mal ne fait pas qu'ajouter de l'information : il ajoute des erreurs, et il dégrade le résultat.
+
+
 
 *(silence)* La question devient donc : comment apprendre à la voiture à choisir automatiquement les bons capteurs, selon ce qu'elle a devant elle ?
 
