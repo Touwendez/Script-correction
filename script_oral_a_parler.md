@@ -46,9 +46,9 @@ Comme le montre ce schéma qui illustre la chaine de conduite autonome , la perc
 
 Chaque capteur a ses forces et ses faiblesses selon la situation. La caméra voit mal la nuit et sous la neige. Le radar, lui, reste fiable. Le LiDAR est gêné par le brouillard.
 
-On pourrait croire qu'il suffit de brancher tous les capteurs ensemble, en permanence, pour bien voir. Eh bien c'est faux, et c'est tout le cœur de notre sujet.
+On serait tenté de croire qu'il suffit de combiner tous les capteurs ensemble, en permanence, pour bien voir. Eh bien non, et c'est tout le cœur de notre sujet.
 
-Le problème, c'est qu'ajouter un capteur qui voit mal ne fait pas qu'ajouter de l'information : il ajoute des erreurs, et il dégrade le résultat.
+Le problème, c'est qu'ajouter un capteur qui voit mal ne fait pas qu'ajouter de l'information : il ajoute des erreurs, et peut dégrader le résultat finale.
 
 
 
