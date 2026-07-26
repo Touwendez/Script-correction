@@ -10,7 +10,7 @@ Touwendé Ouédraogo
 
 ## [1 — Titre]
 
-Bonjour à toutes et à tous. Je m'appelle Touwendé Ouédraogo, je suis en Master Systèmes Machines Autonomes et Réseaux Terrain à l'Université de Lille, et je réalise mon stage ici, chez Audensiel, sur le projet DriveSense, encadré par Amira Mimouna.
+Bonjour à toutes et à tous. Je m'appelle Touwendé Ouédraogo, je suis en Master Systèmes Machines Autonomes et Réseaux Terrain à l'Université de Lille, et je réalise mon stage ici, chez Audensiel, sur le projet DriveSense, encadré par Amira Mimouna. 
 
 Aujourd'hui, à mi-parcours, nous allons vous présenter notre travail sur la perception pour la voiture autonome : comment lui apprendre à bien voir la route, même quand les conditions sont mauvaises.
 
