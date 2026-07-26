@@ -32,7 +32,7 @@ Une voiture autonome, avant de prendre la moindre décision, doit d'abord voir s
 
 Aujourd'hui, la grande majorité des accidents de la route sont dus à des erreurs humaines. C'est toute la promesse de la voiture autonome : supprimer cette part d'erreur.
 
-Mais quand une voiture autonome a un accident, c'est très souvent parce qu'elle n'a pas vu ce qu'elle aurait dû voir. Sur cette image, le véhicule n'a pas détecté l'obstacle devant lui. Et ce type de défaillance arrive presque toujours dans les mêmes conditions c'est a dire : la pluie, le brouillard, la neige, la nuit qui dégradent les systèmes de perception. 
+Mais quand une voiture autonome a un accident, c'est très souvent parce qu'elle n'est pas parvenu a détecter ce  qu'elle aurait du détecter. Sur cette image, le véhicule n'a pas détecté l'obstacle devant lui. Et ce type de défaillance arrive presque toujours dans les mêmes conditions c'est a dire des condition climatique défavorables qui ont tendance a dégrader  les systèmes de perception. 
 
 *(silence)* C'est exactement le problème sur lequel nous travaillons.
 
