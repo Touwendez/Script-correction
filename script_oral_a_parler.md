@@ -39,7 +39,7 @@ Mais quand une voiture autonome a un accident, c'est très souvent parce qu'elle
 ## [5 — Le projet DriveSense]
 
 
-Comme le montre ce schéma, la perception est le maillon central de la chaîne : elle vient après les capteurs, et tout le reste — la planification de la trajectoire, le contrôle du véhicule — dépend d'elle. Autrement dit, si la perception se trompe, l'erreur se propage jusqu'au volant.
+Comme le montre ce schéma qui illustre la chaine de conduite autonome , la perception est le maillon central de la chaîne : elle vient après les capteurs, et tout dépend d'elle c'est a dire la planification de la trajectoire, le contrôle du véhicule — dépend d'elle. Autrement dit, si la perception se trompe, l'erreur se propage jusqu'au volant.
 
 
 ## [6 — Problématique]
