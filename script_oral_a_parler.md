@@ -89,7 +89,7 @@ Maintenant, mesurons ce que vaut chaque capteur, tout seul.
 
 ## [15 — Séparateur : Détecteurs monomodaux]
 
-*(2 secondes)* Que vaut chaque capteur, séparément ?
+ Que vaut chaque capteur, séparément ?
 
 ## [16 — Protocole]
  Nous avons évalué les capteurs sur 22 scènes de test, couvrant toutes les conditions météo. Et surtout, tout est mesuré exactement de la même façon. Cela veut dire que tous les chiffres que je vais vous montrer sont directement comparables entre eux.
@@ -100,11 +100,11 @@ parmi les trois capteurs, nous n'avons réentraîné que le modele du  LiDAR pou
 
 ## [17 — Performances et limites]
 
-Le message de cette slide tient en une phrase : aucun capteur n'est bon partout.
+ aucun capteur n'est bon partout.
 
 Le radar est le plus solide dans l'ensemble, mais il produit parfois de fausses détections. La caméra voit très bien de jour, mais elle s'effondre la nuit et sous la neige. Et le LiDAR est le plus faible des trois, même s'il reste précis sur la forme des objets.
 
-*(silence)* Conclusion : si l'on fige la fusion une fois pour toutes, on subira forcément le capteur défaillant du moment. Il faut donc choisir les capteurs selon la scène.
+Fusionner tous forcément le capteur défaillant du moment. Il faut donc choisir les capteurs selon la scène.
 
 Mais avant de choisir, nous avons dû résoudre un obstacle. Les capteurs ne voient pas dans le même repère.
 
