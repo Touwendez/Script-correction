@@ -76,19 +76,14 @@ Mais on a été obliger de changer d'approche basculer sur RADIATE et cela du a 
 
 ## [13 — De CARLA à RADIATE]
 
-Le problème de la simulation, c'est qu'elle est trop propre. Les signaux y sont parfaits. Or ce que nous voulons justement gérer, c'est le bruit, les imperfections des vrais capteurs. Et ça, on ne l'a que dans des données réelles.
-
-Nous sommes donc passés à un jeu de données réel, appelé RADIATE, enregistré dans de vraies conditions : vraie pluie, vrai brouillard, vraie neige.
-
-Un point important sur ce graphique : il y a énormément de voitures dans les données, mais très peu de vélos et de piétons. Ce déséquilibre reviendra dans nos résultats tout à l'heure — gardez-le en tête.
-
-Encore une étape technique, et nous pourrons mesurer les capteurs.
+Nous sommes donc passés à un jeu de données réel, appelé RADIATE, enregistré dans de vraies conditions 
+Un point important sur ce graphique : il y a énormément de voitures dans les données, mais très peu de vélos et de piétons. Ce déséquilibre reviendra dans nos résultats tout à l'heure 
 
 ## [14 — Synchronisation]
 
 Les trois capteurs ne prennent pas leur image exactement au même instant. Le radar est plus lent que les autres : il prend environ quatre images par seconde, les autres sont plus rapides.
 
-Le souci, c'est qu'un même numéro d'image ne correspond pas au même moment réel. Entre deux prises, une voiture a eu le temps de bouger. Nous avons donc tout recalé sur l'horloge du radar, pour être sûrs que les trois capteurs décrivent bien la même scène, au même instant.
+Le souci, c'est qu'un même numéro d'image ne correspond pas au même moment réel. Entre deux prises, une voiture a eu le temps de bouger. Tous a donc été recaler sur l'horloge du radar, pour être sûrs que les trois capteurs décrivent bien la même scène, au même instant.
 
 Maintenant, mesurons ce que vaut chaque capteur, tout seul.
 
@@ -97,12 +92,11 @@ Maintenant, mesurons ce que vaut chaque capteur, tout seul.
 *(2 secondes)* Que vaut chaque capteur, séparément ?
 
 ## [16 — Protocole]
+ Nous avons évalué les capteurs sur 22 scènes de test, couvrant toutes les conditions météo. Et surtout, tout est mesuré exactement de la même façon. Cela veut dire que tous les chiffres que je vais vous montrer sont directement comparables entre eux.
 
-Un mot rapide sur la méthode, parce qu'elle vaut pour tout ce qui suit. Nous avons évalué les capteurs sur 22 scènes de test, couvrant toutes les conditions météo. Et surtout, tout est mesuré exactement de la même façon. Cela veut dire que tous les chiffres que je vais vous montrer sont directement comparables entre eux.
+parmi les trois capteurs, nous n'avons réentraîné que le modele du  LiDAR pour l'adapter a notre base de donnée.
 
-Un seul point de méthode que nous assumons : parmi les trois capteurs, nous n'avons réentraîné que le LiDAR.
 
-Voici le verdict.
 
 ## [17 — Performances et limites]
 
