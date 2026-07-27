@@ -1,30 +1,4 @@
-# Script oral — à dire mot à mot
-**Présentation PercepFlow · mi-parcours Audensiel · 15 minutes**
-Touwendé Ouédraogo
 
-> Ce texte est écrit pour être dit tel quel. Chaque paragraphe correspond à une slide.
-> Les indications entre parenthèses et en italique ne se disent pas : ce sont des repères de rythme.
-> Marquez un silence à chaque changement de slide.
-
----
-
-## [1 — Titre]
-
-Bonjour à toutes et à tous. Je m'appelle Touwendé Ouédraogo, je suis en Master Systèmes Machines Autonomes et Réseaux Terrain à l'Université de Lille, et je réalise mon stage ici, chez Audensiel, sur le projet DriveSense, encadré par Amira Mimouna. 
-
-Aujourd'hui, à mi-parcours, nous allons vous présenter notre travail sur la perception pour la voiture autonome : comment lui apprendre à bien voir la route, même quand les conditions sont mauvaises.
-
-*(silence)*
-
-## [2 — Sommaire]
-
-Nous allons procéder en sept temps. Mais si vous ne deviez retenir qu'une idée aujourd'hui, ce serait celle-ci : aucun capteur n'est parfait tout seul, et tout l'enjeu de notre travail, c'est d'apprendre à la voiture à choisir les bons capteurs selon la situation.
-
-Commençons par le contexte.
-
-## [3 — Séparateur : Contexte et problématique]
-
-*(2 secondes, on enchaîne)* Le contexte, d'abord.
 
 ## [4 — Contexte]
 
@@ -52,18 +26,19 @@ Le problème, c'est qu'ajouter un capteur qui voit mal ne fait pas qu'ajouter de
 
 
 
-*(silence)* La question devient donc : comment apprendre à la voiture à choisir automatiquement les bons capteurs, selon ce qu'elle a devant elle ?
+La question devient donc : comment apprendre à la voiture à choisir automatiquement les bons capteurs, selon ce qu'elle a devant elle ?
 
 Avant de répondre, regardons ce qui existe déjà.
 
 ## [7 — Séparateur : État de l'art]
 
-*(2 secondes)* Un rapide tour de l'existant.
 
 ## [8 — Les stratégies de fusion]
 
 Pour combiner plusieurs capteurs, il existe quatre grandes familles de méthodes.
-
+Fusion précoce
+Fusion intermédiaire
+Fusion tardive
 Les trois premières — précoce, intermédiaire, tardive — ont un point commun : elles traitent tous les capteurs de la même façon, tout le temps, quelle que soit la situation.
 
 La quatrième, la fusion adaptative, fait quelque chose de différent : elle ajuste l'importance de chaque capteur selon le contexte. C'est la seule qui permet de mettre de côté un capteur qui voit mal. C'est donc celle que nous avons choisie.
