@@ -98,9 +98,9 @@ Mais avant de comparer, il faut des données. Voyons lesquelles.
 
 Nous avons d'abord travaillé en simulation, dans un environnement virtuel appelé CARLA. L'intérêt, c'est qu'on y contrôle la météo à volonté : on peut générer autant de pluie ou de brouillard qu'on veut. Nous avons ainsi produit 36 000 images dans toutes les conditions.
 
-Sur ces images, nous avons entraîné un petit réseau capable de reconnaître la météo à partir de la caméra. Il est très fiable, autour de 97 %. Retenez-le, car il va nous resservir plus tard.
+Sur ces images, nous avons entraîné un petit réseau capable de reconnaître la météo à partir de la caméra. Assez fiable.
 
-Mais la simulation a une limite qui nous a obligés à changer d'approche.
+Mais on a été obliger de changer d'approche basculer sur RADIATE et cela du a des problèmes de ressource .
 
 ## [13 — De CARLA à RADIATE]
 
