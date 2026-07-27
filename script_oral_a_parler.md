@@ -64,7 +64,7 @@ Mais avant de comparer, il faut des données. Voyons lesquelles.
 
 ## [11 — Séparateur : Travaux 2023 et 2024]
 
-*(2 secondes)* Le projet ne part pas de zéro.
+Le projet ne part pas de zéro.
 
 ## [12 — CARLA et WeatherCNN]
 
@@ -77,7 +77,7 @@ Mais on a été obliger de changer d'approche basculer sur RADIATE et cela du a 
 ## [13 — De CARLA à RADIATE]
 
 Nous sommes donc passés à un jeu de données réel, appelé RADIATE, enregistré dans de vraies conditions 
-Un point important sur ce graphique : il y a énormément de voitures dans les données, mais très peu de vélos et de piétons. Ce déséquilibre reviendra dans nos résultats tout à l'heure 
+Un point important sur ce graphique : il y a énormément de voitures dans les données, mais très peu de classes comme vélos et de piétons. Ce déséquilibre reviendra dans nos résultats.
 
 ## [14 — Synchronisation]
 
@@ -92,7 +92,7 @@ Maintenant, mesurons ce que vaut chaque capteur, tout seul.
  Que vaut chaque capteur, séparément ?
 
 ## [16 — Protocole]
- Nous avons évalué les capteurs sur 22 scènes de test, couvrant toutes les conditions météo. Et surtout, tout est mesuré exactement de la même façon. Cela veut dire que tous les chiffres que je vais vous montrer sont directement comparables entre eux.
+ Nous avons évalué les capteurs sur 22 scènes de test, couvrant toutes les conditions météo. Et surtout, tout est mesuré exactement de la même façon.  
 
 parmi les trois capteurs, nous n'avons réentraîné que le modele du  LiDAR pour l'adapter a notre base de donnée.
 
@@ -102,21 +102,18 @@ parmi les trois capteurs, nous n'avons réentraîné que le modele du  LiDAR pou
 
  aucun capteur n'est bon partout.
 
-Le radar est le plus solide dans l'ensemble, mais il produit parfois de fausses détections. La caméra voit très bien de jour, mais elle s'effondre la nuit et sous la neige. Et le LiDAR est le plus faible des trois, même s'il reste précis sur la forme des objets.
+Le radar est le plus solide dans l'ensemble, mais il produit parfois de fausses détections. La caméra vdétecte  très bien de jour, mais elle s'effondre la nuit et sous la neige. Et le LiDAR est le plus faible des trois, même s'il reste précis sur la forme des objets.
 
-Fusionner tous forcément le capteur défaillant du moment. Il faut donc choisir les capteurs selon la scène.
+Fusionner donc tous ces capteurs reviens dons a ajouter forcément le capteur défaillant. Il faut donc choisir les capteurs selon la scène.
 
-Mais avant de choisir, nous avons dû résoudre un obstacle. Les capteurs ne voient pas dans le même repère.
+Mais avant de choisir et de fusionner, nous avons dû résoudre un obstacle. Les capteurs ne voient pas dans le même repère.
 
 ## [19 — Le socle commun : LSS]
 
-Voici le problème. Le radar et le LiDAR voient la scène d'en haut, comme sur un plan : chaque point a une position réelle, en mètres. La caméra, elle, voit de face, comme nos yeux, et sans notion de distance.
+Voici le problème. Le radar et le LiDAR voient la scène d'en haut, comme sur un plan : chaque point a une position réelle, en mètres. La caméra, elle, voit de face.
 
-Résultat : on ne peut pas les combiner directement, ils ne parlent pas la même langue géométrique. La solution que nous utilisons s'appelle le LSS. Elle transforme l'image de la caméra en une vue de dessus, pour la mettre dans le même repère que les deux autres.
+Résultat : on ne peut pas les combiner directement, ils ne sont pas dasn le même espace géométrique. La solution que nous utilisons s'appelle le LSS. Elle transforme l'image de la caméra en une vue de dessus, pour la mettre dans le même repère que les deux autres.
 
-*(silence)* Et un point vraiment important : ce module sert à nos *deux* méthodes. Ce n'est pas propre à l'une ou à l'autre. La seule vraie différence entre nos deux approches, ce sera la façon de choisir les capteurs.
-
-Justement, première façon de choisir : les règles.
 
 ## [18 — Séparateur : Knowledge Based Gating]
 
