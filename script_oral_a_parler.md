@@ -117,15 +117,15 @@ Résultat : on ne peut pas les combiner directement, ils ne sont pas dasn le mê
 
 ## [18 — Séparateur : Knowledge Based Gating]
 
-*(2 secondes)* Première approche : des règles d'expert.
+Première approche : des règles d'expert.
 
 ## [20 — Architecture des règles]
 
-L'idée de cette première méthode est simple, et c'est sa force : on devine la météo, et une table décide quels capteurs privilégier.
+L'idée de cette première méthode est simple : un cnn prédit la météo, et une table décide quels capteurs privilégier.
 
-Concrètement, le réseau météo dont je vous ai parlé lit la caméra et annonce la condition : brouillard, neige, nuit… Ensuite, une table écrite par nous attribue une importance à chaque combinaison de capteurs. Par exemple : s'il y a du brouillard, on privilégie le radar. En ville par temps clair, on privilégie la caméra.
+Concrètement, le réseau météo dont je vous ai parlé lit la caméra et annonce la condition : brouillard, neige, nuit… Ensuite, une table experte attribue une importance à chaque combinaison de capteurs. Par exemple : s'il y a du brouillard, on privilégie le radar. En ville par temps clair, on privilégie la caméra.
 
-Le grand avantage, c'est qu'on comprend toujours pourquoi tel capteur a été choisi. C'est totalement transparent.
+Le grand avantage, c'est qu'on comprend toujours pourquoi tel capteur a été choisi. 
 
 Est-ce que ça marche ? En partie.
 
@@ -133,9 +133,9 @@ Est-ce que ça marche ? En partie.
 
 Cette méthode a un vrai atout : elle retrouve davantage d'objets que n'importe quel capteur utilisé seul. La fusion récupère des objets que les capteurs manquaient chacun de leur côté.
 
-Mais elle a aussi une limite nette : elle localise moins bien les objets que le radar seul. Elle plafonne. Et la raison est simple : des règles écrites à l'avance ne peuvent pas coller parfaitement à toutes les situations réelles.
-
-*(On ne commente pas le tableau du bas en détail)* Nous avons aussi choisi, au passage, la meilleure méthode pour combiner les détections.
+Mais elle a aussi une limite Et la raison est simple : des règles écrites à l'avance ne peuvent pas coller parfaitement à toutes les situations réelles.
+ 
+ Nous avons aussi choisi, au passage, la meilleure méthode pour combiner les détections.
 
 Un exemple concret pour illustrer.
 
@@ -145,7 +145,7 @@ Voici une scène de ville, par temps clair. Ici, la règle fait confiance à la 
 
 Mais cette approche a des limites de fond.
 
-## [24 — Limites des règles]
+## [23 — Limites des règles]
 
 Le vrai défaut de cette méthode, le voici : pour deviner la météo, elle dépend de la caméra. Or la caméra, c'est justement le capteur le plus fragile, celui qui lâche en premier quand les conditions se dégradent. C'est un peu paradoxal : on s'appuie sur le capteur le moins fiable pour décider.
 
@@ -153,33 +153,33 @@ Il y a d'autres limites : les règles sont figées, donc une situation imprévue
 
 *(silence)* De là est née notre idée principale : garder exactement le même pipeline, mais au lieu de dicter des règles au réseau, le laisser apprendre lui-même à choisir. C'est notre contribution.
 
-## [25 — Séparateur : PercepFlow]
+## [24 — Séparateur : PercepFlow]
 
-*(2 secondes)* Deuxième approche : laisser le réseau apprendre.
+* Deuxième approche : laisser le réseau apprendre.
 
-## [26 — Architecture PercepFlow]
+## [25 — Architecture PercepFlow]
 
 Notre méthode, que nous avons appelée PercepFlow, garde le même pipeline que les règles. Mais elle remplace la table écrite à la main par un module qui apprend tout seul quels capteurs sont fiables selon la scène.
 
 Il y a trois capteurs, donc sept combinaisons possibles, et le réseau en retient les trois meilleures à chaque instant. Et pour décider, il ne regarde pas que les images : il regarde aussi l'état des capteurs, la luminosité, le contraste.
 
-*(silence)* La différence essentielle avec la méthode précédente : ici, aucune règle météo n'est écrite à la main. Le réseau apprend tout seul.
+La différence essentielle avec la méthode précédente : ici, aucune règle météo n'est écrite à la main. Le réseau apprend tout seul.
 
 Un mot sur la façon dont on l'entraîne, parce que l'ordre a son importance.
 
-## [27 — Entraînement]
+## [26 — Entraînement]
 
 Nous entraînons le système en deux temps, jamais les deux en même temps.
 
 Dans un premier temps — en orange sur le tableau — les capteurs apprennent à détecter les objets, pendant que le module de choix reste gelé. Dans un second temps — en bleu — on fait l'inverse : on gèle les capteurs, et seul le module de choix apprend.
 
-Pourquoi séparer ? Parce que si on entraîne tout en même temps, le module apprend à choisir sur des bases encore instables, et ça part dans tous les sens. C'est d'ailleurs exactement ce qui bloquait le système l'an dernier.
+Pourquoi séparer ? Parce que si on entraîne tout en même temps, le module apprend à choisir sur des bases encore instables.
 
 Venons-en aux résultats.
 
-## [28 — Résultats globaux]
+## [27 — Résultats globaux]
 
-S'il y a une chose à retenir de cette slide, c'est celle-ci : notre méthode obtient la meilleure localisation de toutes les approches testées. Meilleure que chaque capteur seul, et meilleure que la méthode par règles.
+notre méthode obtient la meilleure localisation de toutes les approches testées. Meilleure que chaque capteur seul, et meilleure que la méthode par règles.
 
 *(silence)* Je veux être transparent sur un point : sur un autre critère, qui mélange la détection et la précision, le radar seul reste très légèrement devant nous. Nous localisons mieux, mais il nous reste une marge de progression sur cet équilibre-là. C'est un de nos chantiers pour la suite.
 
