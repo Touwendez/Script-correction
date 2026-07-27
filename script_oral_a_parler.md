@@ -74,11 +74,8 @@ Un travail en particulier nous a servi de point de départ.
 
 Ce travail, c'est HydraFusion, publié en 2022, sur les mêmes données que nous.
 
-Et il apporte un résultat surprenant, que je vous invite à retenir. Regardez ces deux lignes : quand on fusionne *tous* les capteurs, on obtient 65 %. Mais quand on ne garde que les *trois meilleurs*, on monte à 81 %.
+HydraFusion propose une fusion sélective fondée sur un module de gating, décliné en trois strategies. 
 
-*(silence)* Autrement dit : en utiliser moins, mais bien les choisir, donne un meilleur résultat. C'est le principe qui fonde tout notre travail.
-
-Reste à savoir comment on choisit. Il y a trois façons de faire.
 
 ## [10 — Trois stratégies de gating]
 
